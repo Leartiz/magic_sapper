@@ -1,0 +1,2 @@
+module Env
+singleton CustomConsts 1.0 CustomConsts.qml

@@ -1,0 +1,14 @@
+module Pages
+BgNewGamePopup 1.0 BgNewGamePopup.qml
+CntntNewGamePopup 1.0 CntntNewGamePopup.qml
+CntntStatsPopup 1.0 CntntStatsPopup.qml
+CntntWinPopup 1.0 CntntWinPopup.qml
+GameFieldPage 1.0 GameFieldPage.qml
+LeaderboardPage 1.0 LeaderboardPage.qml
+NewGamePopup 1.0 NewGamePopup.qml
+PopupConfirm 1.0 PopupConfirm.qml
+SettgsPage 1.0 SettgsPage.qml
+StatsPopup 1.0 StatsPopup.qml
+WinPopup 1.0 WinPopup.qml
+
+RandomInt 1.0 RandomInt.js

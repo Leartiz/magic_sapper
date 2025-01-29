@@ -1,0 +1,6 @@
+module Bars
+GameFieldTopBar 1.0 GameFieldTopBar.qml
+LBoardTopBar 1.0 LBoardTopBar.qml
+ModeBotBar 1.0 ModeBotBar.qml
+SettgsTopBar 1.0 SettgsTopBar.qml
+ToolsBottomBar 1.0 ToolsBottomBar.qml

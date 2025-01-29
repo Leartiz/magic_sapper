@@ -1,0 +1,16 @@
+module Widgets
+BtnBotBar 1.0 BtnBotBar.qml
+BtnTopBar 1.0 BtnTopBar.qml
+BtnWithBorder 1.0 BtnWithBorder.qml
+CheckboxAndLbl 1.0 CheckboxAndLbl.qml
+CustomModeSliders 1.0 CustomModeSliders.qml
+EditableField 1.0 EditableField.qml
+FieldCell 1.0 FieldCell.qml
+ImgWithLbl 1.0 ImgWithLbl.qml
+MenuBtn 1.0 MenuBtn.qml
+PrmModeSlider 1.0 PrmModeSlider.qml
+RecordItem 1.0 RecordItem.qml
+SizeSlider 1.0 SizeSlider.qml
+SizeSliderWithBtn 1.0 SizeSliderWithBtn.qml
+SmplModeTab 1.0 SmplModeTab.qml
+ZoomBtn 1.0 ZoomBtn.qml
