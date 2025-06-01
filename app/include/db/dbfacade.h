@@ -8,7 +8,7 @@
 
 #include "entities/mode.h"
 #include "entities/descriptormode.h"
-#include "entities/settgs.h"
+#include "entities/settings.h"
 #include "entities/record.h"
 #include "entities/stats.h"
 
@@ -28,7 +28,7 @@ public:
     QVector<DescriptorMode> selDModesByMode(WrMode::Mode mode) const;
     QVector<DescriptorMode> selAllDModes() const;
 
-    Settgs selSettgs() const;
+    Settings selSettgs() const;
 
     Record selRecordById(const int id) const;
     QVector<Record> selRecordsByModeId(const int modeId) const;
@@ -37,7 +37,7 @@ public:
     Stats selStatsByModeId(const int modeId) const;
     QVector<Stats> selAllStatss() const;
 
-    void updSettgs(const Settgs& s) const;
+    void updSettgs(const Settings& s) const;
     void updDMode(const DescriptorMode& dm) const;
     void updStats(const Stats& s) const;
 

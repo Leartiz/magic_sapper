@@ -105,7 +105,7 @@ void GameFieldModel::updatePartFields()
 // safe!
 void GameFieldModel::updatePartSettgs()
 {
-    const Settgs settgs = m_dbFacade.selSettgs();
+    const Settings settgs = m_dbFacade.selSettgs();
     m_settgs.setUsername(settgs.getUsername());
     m_settgs.setIsUseQuestionMark(settgs.getIsUseQuestionMark());
     m_settgs.setIsUseSizeSlider(settgs.getIsUseSizeSlider());

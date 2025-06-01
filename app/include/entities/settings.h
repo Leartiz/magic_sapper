@@ -1,14 +1,13 @@
-#ifndef SETTGS_H
-#define SETTGS_H
+#ifndef SETTINGS_H
+#define SETTINGS_H
 
 #include <optional>
 
 #include <QString>
 
 #include "entities/usrdata.h"
-#include "entities/mode.h"
 
-class Settgs final : public UsrData
+class Settings final : public UsrData
 {
 public:
     struct Tbl
@@ -25,13 +24,12 @@ public:
     };
 
 public:
-    Settgs() = default;
+    Settings() = default;
+    explicit Settings(const int id);
+    Settings(const QString& username, const int modeId);
+    Settings(const int id, const QString& username, const int modeId);
 
-    explicit Settgs(const int id);
-    Settgs(const QString& username, const int modeId);
-    Settgs(const int id, const QString& username, const int modeId);
-
-    ~Settgs() override = default;
+    ~Settings() override = default;
 
 public:
     std::optional<int> getModeId() const;
@@ -50,11 +48,11 @@ public:
 
 private:
     std::optional<int> m_modeId; // cur!
-    int m_maxAmRecords; // const!
+    int m_maxAmRecords = 0; // const!
 
     // flags!
-    bool m_isUseQuestionMark;
-    bool m_isUseSizeSlider;
+    bool m_isUseQuestionMark = false;
+    bool m_isUseSizeSlider = false;
 };
 
-#endif // SETTGS_H
+#endif // SETTINGS_H

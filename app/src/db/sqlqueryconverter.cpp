@@ -46,21 +46,21 @@ QVector<Record> SqlQueryConverter::queryToRecords(QSqlQuery& query)
     return rcrds;
 }
 
-QVector<Settgs> SqlQueryConverter::queryToSettgss(QSqlQuery& query)
+QVector<Settings> SqlQueryConverter::queryToSettgss(QSqlQuery& query)
 {
     const QSqlRecord rec = query.record();
-    const int idIx = rec.indexOf(Settgs::Tbl::Id);
-    const int unIx = rec.indexOf(Settgs::Tbl::Username);
-    const int modeIdIx = rec.indexOf(Settgs::Tbl::ModeId);
-    const int maxAmRecordsIx = rec.indexOf(Settgs::Tbl::MaxAmRecords);
+    const int idIx = rec.indexOf(Settings::Tbl::Id);
+    const int unIx = rec.indexOf(Settings::Tbl::Username);
+    const int modeIdIx = rec.indexOf(Settings::Tbl::ModeId);
+    const int maxAmRecordsIx = rec.indexOf(Settings::Tbl::MaxAmRecords);
 
-    const int isUseQuestionMarkIx = rec.indexOf(Settgs::Tbl::IsUseQuestionMark);
-    const int isUseSizeSliderIx = rec.indexOf(Settgs::Tbl::IsUseSizeSlider);
+    const int isUseQuestionMarkIx = rec.indexOf(Settings::Tbl::IsUseQuestionMark);
+    const int isUseSizeSliderIx = rec.indexOf(Settings::Tbl::IsUseSizeSlider);
 
-    QVector<Settgs> stgss;
+    QVector<Settings> stgss;
     while (query.next())
     {
-        Settgs s(query.value(idIx).toInt());
+        Settings s(query.value(idIx).toInt());
         s.setUsername(query.value(unIx).toString());
         s.setModeId(query.value(modeIdIx).toInt());
         s.setMaxAmRecords(query.value(maxAmRecordsIx).toInt());

@@ -4,7 +4,7 @@
 #include <QObject>
 
 #include "db/dbfacade.h"
-#include "entities/settgs.h"
+#include "entities/settings.h"
 
 class SettgsModel : public QObject
 {
@@ -39,7 +39,7 @@ signals:
     void statsAndRecsReseted();
 
 private:
-    Settgs m_settgs;
+    Settings m_settgs;
 
 private:
     const DBFacade& m_dbFacade;

@@ -12,7 +12,7 @@
 
 #include "entities/descriptormode.h"
 #include "entities/mode.h"
-#include "entities/settgs.h"
+#include "entities/settings.h"
 #include "entities/record.h"
 #include "entities/stats.h"
 
@@ -50,7 +50,7 @@ void Conct::createTbls()
         createDMode();
         inflateDMode();
     }
-    if (!tbls.contains(Settgs::Tbl::TblName))
+    if (!tbls.contains(Settings::Tbl::TblName))
     {
         createSettgs();
         inflateSettgs();
@@ -91,16 +91,16 @@ void Conct::createDMode()
 void Conct::createSettgs()
 {
     const QString sQuery = {
-        "CREATE TABLE " + Settgs::Tbl::TblName + " (" +
-        Settgs::Tbl::Id + " INTEGER, " +
-        Settgs::Tbl::Username + " TEXT NOT NULL, " +
-        Settgs::Tbl::ModeId + " INTEGER NOT NULL, " +
-        Settgs::Tbl::MaxAmRecords + " INTEGER NOT NULL, " +
-        Settgs::Tbl::IsUseQuestionMark + " INTEGER NOT NULL, " +
-        Settgs::Tbl::IsUseSizeSlider + " INTEGER NOT NULL, " +
-        "FOREIGN KEY(" + Settgs::Tbl::ModeId + ") "
+        "CREATE TABLE " + Settings::Tbl::TblName + " (" +
+        Settings::Tbl::Id + " INTEGER, " +
+        Settings::Tbl::Username + " TEXT NOT NULL, " +
+        Settings::Tbl::ModeId + " INTEGER NOT NULL, " +
+        Settings::Tbl::MaxAmRecords + " INTEGER NOT NULL, " +
+        Settings::Tbl::IsUseQuestionMark + " INTEGER NOT NULL, " +
+        Settings::Tbl::IsUseSizeSlider + " INTEGER NOT NULL, " +
+        "FOREIGN KEY(" + Settings::Tbl::ModeId + ") "
         "REFERENCES " + DescriptorMode::Tbl::TblName + "(" + DescriptorMode::Tbl::Id + "), "
-        "PRIMARY KEY(" + Settgs::Tbl::Id + ")" +
+        "PRIMARY KEY(" + Settings::Tbl::Id + ")" +
         ");"
     };
     QSqlQuery query(QSqlDatabase::database());
@@ -194,12 +194,12 @@ void Conct::inflateDMode()
 void Conct::inflateSettgs()
 {
     const QStringList cols = {
-        Settgs::Tbl::Username,
-        Settgs::Tbl::ModeId,
-        Settgs::Tbl::MaxAmRecords,
+        Settings::Tbl::Username,
+        Settings::Tbl::ModeId,
+        Settings::Tbl::MaxAmRecords,
 
-        Settgs::Tbl::IsUseQuestionMark,
-        Settgs::Tbl::IsUseSizeSlider
+        Settings::Tbl::IsUseQuestionMark,
+        Settings::Tbl::IsUseSizeSlider
     };
     const int maxAmRecords = 10;
     const auto dModes = DBFacade::selDModesByModeAtInit(WrMode::Middle, false); // one!
@@ -207,7 +207,7 @@ void Conct::inflateSettgs()
         { "anonymous", dModes.front().getId().value(), maxAmRecords, 1, 1 } // is!
     };
 
-    const QString sQuery = CrudQueryCreator::insert_vals(Settgs::Tbl::TblName, cols, someVals);
+    const QString sQuery = CrudQueryCreator::insert_vals(Settings::Tbl::TblName, cols, someVals);
     QSqlQuery query(QSqlDatabase::database());
     if (!query.exec(sQuery))
     {

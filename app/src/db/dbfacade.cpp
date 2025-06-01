@@ -125,9 +125,9 @@ QVector<DescriptorMode> DBFacade::selAllDModes() const
     return dModes;
 }
 
-Settgs DBFacade::selSettgs() const
+Settings DBFacade::selSettgs() const
 {
-    const auto sQuery = CrudQueryCreator::select_all(Settgs::Tbl::TblName);
+    const auto sQuery = CrudQueryCreator::select_all(Settings::Tbl::TblName);
     QSqlQuery query(QSqlDatabase::database());
     if (!query.exec(sQuery))
     {
@@ -232,7 +232,7 @@ QVector<Stats> DBFacade::selAllStatss() const
     return SqlQueryConverter::queryToStats(query);;
 }
 
-void DBFacade::updSettgs(const Settgs& s) const
+void DBFacade::updSettgs(const Settings& s) const
 {
     if (!s.getId().has_value())
     {
@@ -246,10 +246,10 @@ void DBFacade::updSettgs(const Settgs& s) const
     }
 
     const QStringList cols = {
-        Settgs::Tbl::Username,
-        Settgs::Tbl::ModeId,
-        Settgs::Tbl::IsUseQuestionMark,
-        Settgs::Tbl::IsUseSizeSlider
+        Settings::Tbl::Username,
+        Settings::Tbl::ModeId,
+        Settings::Tbl::IsUseQuestionMark,
+        Settings::Tbl::IsUseSizeSlider
     };
     const QVariantList vals = {
         s.getUsername(),
@@ -258,10 +258,10 @@ void DBFacade::updSettgs(const Settgs& s) const
         s.getIsUseSizeSliderAsNum()
     };
     const QString condWhere = {
-        Settgs::Tbl::Id + "==" +
+        Settings::Tbl::Id + "==" +
         QString::number(static_cast<int>(s.getId().value()))
     };
-    const auto sQuery = CrudQueryCreator::update(Settgs::Tbl::TblName, cols, vals, condWhere);
+    const auto sQuery = CrudQueryCreator::update(Settings::Tbl::TblName, cols, vals, condWhere);
     QSqlQuery query(QSqlDatabase::database());
     if (!query.exec(sQuery))
     {

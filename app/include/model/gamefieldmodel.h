@@ -17,7 +17,7 @@
 
 #include "db/dbfacade.h"
 #include "entities/descriptormode.h"
-#include "entities/settgs.h"
+#include "entities/settings.h"
 
 class GameFieldModel : public QAbstractListModel
 {
@@ -194,7 +194,7 @@ private:
     bool m_isEndGame;
 
 private:
-    Settgs m_settgs;
+    Settings m_settgs;
     DescriptorMode m_dMode;
     Stats m_stats;
 

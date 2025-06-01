@@ -14,7 +14,7 @@ SOURCES += \
         src/db/sqlqueryconverter.cpp \
         src/entities/descriptormode.cpp \
         src/entities/record.cpp \
-        src/entities/settgs.cpp \
+        src/entities/settings.cpp \
         src/entities/stats.cpp \
         src/entities/usrdata.cpp \
         src/model/custommodemodel.cpp \
@@ -48,7 +48,7 @@ HEADERS += \
     include/entities/descriptormode.h \
     include/entities/mode.h \
     include/entities/record.h \
-    include/entities/settgs.h \
+    include/entities/settings.h \
     include/entities/stats.h \
     include/entities/usrdata.h \
     include/model/celltype.h \

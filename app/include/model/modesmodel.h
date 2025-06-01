@@ -13,7 +13,7 @@
 
 #include "db/dbfacade.h"
 #include "entities/descriptormode.h"
-#include "entities/settgs.h"
+#include "entities/settings.h"
 
 class ModesModel : public QAbstractListModel
 {
@@ -63,7 +63,7 @@ private:
     void prepareDModes();
 
 private:
-    Settgs m_settgs; // cur mode!
+    Settings m_settgs; // cur mode!
     DModeAndIndx m_curDModeAndIndx;
     QVector<std::shared_ptr<DescriptorMode>> m_dModes;
 
